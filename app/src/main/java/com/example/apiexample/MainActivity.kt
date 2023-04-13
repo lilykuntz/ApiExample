@@ -17,10 +17,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -203,7 +201,7 @@ fun sendRequest(
 
     val api = retrofit.create(UserApi::class.java)
 
-    val call = api.getWeather((0..5).shuffled().last())
+    val call = api.getWeather((1..5).shuffled().last())
 
     call!!.enqueue(object: Callback<WeatherModel?> {
         override fun onResponse(call: Call<WeatherModel?>, response: Response<WeatherModel?>) {
